@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee MOMI - Kopi Kesehatan Stamina</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    * { font-family: 'Poppins', sans-serif; }
+
+    .gradient-bg { background: linear-gradient(135deg, #6B4423 0%, #3E2723 100%); }
+    .promo-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+
+    .benefit-card { transition: all 0.3s ease; }
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .countdown { font-variant-numeric: tabular-nums; }
+
+    /* Efek mengambang */
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .float-delayed {
+      animation: float 5s ease-in-out infinite;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Efek uap kopi */
+    .coffee-steam {
+      animation: steam 3s ease-in-out infinite;
+    }
+    @keyframes steam {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-20px) scale(1.1); opacity: 0.5; }
+      100% { transform: translateY(-40px) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 to-orange-50">
+
+  <!-- Header -->
+  <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between" data-aos="fade-down">
+      <div class="flex items-center space-x-3 float">
+        <img src="img/header.jpeg" alt="Logo Coffee MOMI" class="w-12 h-12 rounded-full object-cover border-2 border-amber-400">
+        <div>
+          <h1 class="text-2xl font-bold">Coffee MOMI</h1>
+          <p class="text-xs text-amber-200">Kopi Kesehatan Stamina</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#promo" class="hover:text-amber-300 transition">Promo</a>
+        <a href="#produk" class="hover:text-amber-300 transition">Produk</a>
+        <a href="#manfaat" class="hover:text-amber-300 transition">Manfaat</a>
+        <a href="#testimoni" class="hover:text-amber-300 transition">Testimoni</a>
+        <a href="#kontak" class="hover:text-amber-300 transition">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section 1: Promo -->
+  <section id="promo" class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-64 h-64 bg-amber-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-orange-400 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <img src="img/header.jpeg" alt="Promo Coffee MOMI" class="rounded-3xl shadow-2xl w-full float">
+        </div>
+
+        <div class="text-center md:text-left" data-aos="fade-left">
+          <div class="inline-block bg-red-500 text-white px-6 py-2 rounded-full font-bold text-sm mb-4 promo-pulse">
+            🔥 PROMO TERBATAS!
+          </div>
+          <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+            Diskon <span class="text-red-600">50%</span>
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">Khusus 1 Jam Pertama Penayangan!</p>
+
+          <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-6 float-delayed">
+            <p class="text-gray-600 text-lg mb-2">Harga Normal</p>
+            <p class="text-3xl text-gray-400 line-through font-semibold">Rp 500.000</p>
+            <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white p-6 rounded-2xl mt-4">
+              <p class="text-sm mb-2">Harga Promo Sekarang</p>
+              <p class="text-5xl font-bold">Rp 250.000</p>
+              <p class="text-sm mt-2">/ 3 Box</p>
+            </div>
+          </div>
+
+          <div id="countdown" class="bg-gray-100 rounded-xl p-4 mb-6 text-center">
+            <p class="text-sm text-gray-600 mb-2">Promo berakhir dalam:</p>
+            <div class="flex justify-center space-x-4 countdown">
+              <div class="text-center">
+                <div id="minutes" class="text-3xl font-bold text-red-600">59</div>
+                <div class="text-xs text-gray-600">Menit</div>
+              </div>
+              <div class="text-3xl font-bold text-red-600">:</div>
+              <div class="text-center">
+                <div id="seconds" class="text-3xl font-bold text-red-600">59</div>
+                <div class="text-xs text-gray-600">Detik</div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/082164372980?text=Halo%20saya%20ingin%20pesan%20Coffee%20MOMI%20promo%2050%%20nya!"
+            target="_blank"
+            class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition shadow-lg">
+            Pesan Sekarang!
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Tentang Produk -->
+  <section id="produk" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1" data-aos="fade-right">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Apa Itu Coffee MOMI?</h2>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+            Coffee MOMI adalah produk unggulan <span class="font-bold text-amber-700">PT SSI25</span>,
+            kopi kesehatan stamina dengan kombinasi herbal tradisional yang mengandung
+            <span class="font-bold text-green-700">GUARANA, GINSENG, dan PASAK BUMI</span>.
+          </p>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+            Sangat baik untuk kesehatan dengan fungsi utama untuk
+            <span class="font-bold text-red-700">meningkatkan Stamina, Energi</span> serta
+            <span class="font-bold text-blue-700">meningkatkan daya tahan tubuh</span>.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li>🌿 Mengandung bahan alami berkualitas tinggi</li>
+            <li>🔥 Diracik oleh ahli herbal berpengalaman</li>
+            <li>☕ Cocok untuk pria & wanita dewasa</li>
+          </ul>
+        </div>
+        <div class="order-1 md:order-2 float" data-aos="fade-left">
+          <img src="img/pengenalan.jpeg" alt="Tentang Produk Coffee MOMI" class="rounded-3xl shadow-2xl w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Manfaat -->
+  <section id="manfaat" class="py-20 bg-gradient-to-br from-gray-50 to-amber-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="float-delayed" data-aos="fade-right">
+          <img src="img/manfaat.jpeg" alt="Manfaat Coffee MOMI" class="rounded-3xl shadow-2xl w-full">
+        </div>
+        <div data-aos="fade-left">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Manfaat Luar Biasa</h2>
+          <p class="text-xl text-gray-600 mb-8">Tiga bahan herbal berkualitas untuk kesehatan optimal:</p>
+          <ul class="space-y-3 text-gray-700 text-lg">
+            <li>🌱 <b>Ginseng</b> — Meningkatkan vitalitas dan daya tahan tubuh.</li>
+            <li>🌿 <b>Guarana</b> — Sumber energi alami yang membantu fokus & stamina.</li>
+            <li>🍵 <b>Pasak Bumi</b> — Membantu keseimbangan hormon & libido pria.</li>
+            <li>💪 Meningkatkan performa harian & kebugaran fisik.</li>
+            <li>🧠 Mendukung konsentrasi & kesehatan mental.</li>
+            <li>❤️ Menjaga kesehatan jantung dan sistem imun.</li>
+          </ul>
+          <div class="mt-8">
+            <a href="https://wa.me/082164372980?text=Halo%20saya%20tertarik%20dengan%20manfaat%20Coffee%20MOMI!"
+              target="_blank"
+              class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:from-amber-600 hover:to-orange-600 transform hover:scale-105 transition shadow-2xl">
+              💪 Dapatkan Manfaatnya Sekarang!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Testimoni -->
+  <section id="testimoni" class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-aos="fade-up">Testimoni Pengguna</h2>
+      <p class="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="100">
+        Apa kata mereka yang sudah mencoba <b>Coffee MOMI</b>?
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-xl p-8" data-aos="fade-up" data-aos-delay="150">
+          <img src="img/testi1.png" alt="Testimoni 1" class="w-20 h-20 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-gray-700 italic mb-4">“Setelah minum Coffee MOMI, badan terasa lebih bertenaga dan segar setiap hari!”</p>
+          <h4 class="font-bold text-amber-700">Rudi - Jakarta</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-xl p-8" data-aos="fade-up" data-aos-delay="250">
+          <img src="img/testi2.png" alt="Testimoni 2" class="w-20 h-20 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-gray-700 italic mb-4">“Kopinya enak, efeknya luar biasa. Stamina meningkat dan tidur lebih nyenyak.”</p>
+          <h4 class="font-bold text-amber-700">Andi - Surabaya</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-xl p-8" data-aos="fade-up" data-aos-delay="350">
+          <img src="img/testi3.png" alt="Testimoni 3" class="w-20 h-20 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-gray-700 italic mb-4">“Cocok banget buat saya yang sering lembur. Tetap fokus tanpa deg-degan!”</p>
+          <h4 class="font-bold text-amber-700">Dewi - Bandung</h4>
+        </div>
+      </div>
+		<div class="max-w-5xl mx-auto" data-aos="zoom-in" data-aos-delay="400">
+      <h3 class="text-3xl font-bold text-gray-800 mb-6">🎥 Testimoni Video</h3>
+      <p class="text-gray-600 mb-8 text-lg">
+        Lihat pengalaman langsung pengguna kami yang sudah merasakan manfaat luar biasa dari <b>Coffee MOMI</b>!
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Video 1 -->
+        <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+          <iframe class="w-full aspect-video rounded-3xl"
+            src="https://youtube.com/shorts/cuMNzBQv-Ao?si=rpgO74jt5NqJSu7X"
+            title="Testimoni Coffee MOMI 1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+          <iframe class="w-full aspect-video rounded-3xl"
+            src="https://youtube.com/shorts/XQH5JMP-mNI?si=d68bNdXYpnfihm1C"
+            title="Testimoni Coffee MOMI 2"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+      <div class="mt-12" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://wa.me/082164372980?text=Halo,%20saya%20tertarik%20dengan%20Coffee%20MOMI%20setelah%20melihat%20testimoni!"
+          target="_blank"
+          class="bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition shadow-2xl">
+          ☕ Pesan Sekarang & Rasakan Sendiri!
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak" class="gradient-bg text-white py-12" data-aos="fade-up">
+    <div class="container mx-auto px-4 text-center">
+      <img src="img/footer.jpeg" alt="Footer Coffee MOMI" class="mx-auto rounded-3xl shadow-lg mb-8 w-full md:w-2/3 float">
+      <h3 class="text-3xl font-bold mb-2">Coffee MOMI</h3>
+      <p class="text-amber-200 mb-6">Kopi Kesehatan Stamina dengan Herbal Tradisional</p>
+      <div class="text-amber-300 mb-4">
+        <p>📧 info@coffeemomi.com</p>
+        <p>📱 +62 812-3456-7890</p>
+        <p>🏢 PT SSI25</p>
+      </div>
+      <p class="text-amber-200 text-sm">&copy; 2025 Coffee MOMI - PT SSI25. All rights reserved.</p>
+      <p class="text-amber-300 text-xs mt-2">Disclaimer: Hasil dapat bervariasi pada setiap individu</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+
+    // Countdown Timer
+    let totalSeconds = 3600;
+    function updateCountdown() {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      if (totalSeconds > 0) totalSeconds--; else totalSeconds = 3600;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
