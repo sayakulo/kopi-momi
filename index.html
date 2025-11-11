@@ -41,16 +41,6 @@
       50% { transform: translateY(-15px); }
       100% { transform: translateY(0px); }
     }
-
-    /* Efek uap kopi */
-    .coffee-steam {
-      animation: steam 3s ease-in-out infinite;
-    }
-    @keyframes steam {
-      0% { transform: translateY(0) scale(1); opacity: 0.8; }
-      50% { transform: translateY(-20px) scale(1.1); opacity: 0.5; }
-      100% { transform: translateY(-40px) scale(1.2); opacity: 0; }
-    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-amber-50 to-orange-50">
@@ -74,82 +64,6 @@
       </nav>
     </div>
   </header>
-
-  <!-- Section 1: Promo -->
- <!-- Section 1: Promo -->
-<section id="promo" class="py-20 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-10 left-10 w-64 h-64 bg-amber-400 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-orange-400 rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-      
-      <div data-aos="fade-right">
-        <img src="img/header.jpeg" alt="Promo Coffee MOMI" class="rounded-3xl shadow-2xl w-full float">
-      </div>
-
-      <div class="text-center md:text-left" data-aos="fade-left">
-        <div class="inline-block bg-red-500 text-white px-6 py-2 rounded-full font-bold text-sm mb-4 promo-pulse">
-          🔥 PROMO TERBATAS! Berlaku Selama 1 Jam!
-        </div>
-        <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-          Diskon Hingga <span class="text-red-600">65%</span>
-        </h2>
-        <p class="text-xl text-gray-600 mb-8">Nikmati harga spesial untuk pembelian hari ini!</p>
-
-        <!-- Tabel Harga -->
-        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-10 mb-6 float-delayed">
-          <div class="space-y-6 text-gray-700">
-            <!-- 1 Box -->
-            <div class="border-b border-gray-200 pb-4">
-              <p class="font-semibold text-lg">☕ 1 Box</p>
-              <p class="text-gray-400 line-through">Rp 500.000</p>
-              <p class="text-3xl font-bold text-red-600">Rp 250.000 <span class="text-sm text-gray-500">(Diskon 50%)</span></p>
-            </div>
-            <!-- 2 Box -->
-            <div class="border-b border-gray-200 pb-4">
-              <p class="font-semibold text-lg">☕ 2 Box</p>
-              <p class="text-gray-400 line-through">Rp 1.000.000</p>
-              <p class="text-3xl font-bold text-red-600">Rp 400.000 <span class="text-sm text-gray-500">(Diskon 60%)</span></p>
-            </div>
-            <!-- 3 Box -->
-            <div>
-              <p class="font-semibold text-lg">☕ 3 Box</p>
-              <p class="text-gray-400 line-through">Rp 1.500.000</p>
-              <p class="text-3xl font-bold text-red-600">Rp 525.000 <span class="text-sm text-gray-500">(Diskon 65%)</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Countdown -->
-        <div id="countdown" class="bg-gray-100 rounded-xl p-4 mb-6 text-center">
-          <p class="text-sm text-gray-600 mb-2">Promo berakhir dalam:</p>
-          <div class="flex justify-center space-x-4 countdown">
-            <div class="text-center">
-              <div id="minutes" class="text-3xl font-bold text-red-600">59</div>
-              <div class="text-xs text-gray-600">Menit</div>
-            </div>
-            <div class="text-3xl font-bold text-red-600">:</div>
-            <div class="text-center">
-              <div id="seconds" class="text-3xl font-bold text-red-600">59</div>
-              <div class="text-xs text-gray-600">Detik</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tombol Pesan -->
-        <a href="https://wa.me/082164372980?text=Halo%20saya%20ingin%20pesan%20Coffee%20MOMI%20promo%20diskon%201%20jam!"
-          target="_blank"
-          class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition shadow-lg">
-          Pesan Sekarang & Nikmati Diskonnya!
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 
   <!-- Section 2: Tentang Produk -->
   <section id="produk" class="py-20 bg-white">
@@ -210,7 +124,6 @@
     </div>
   </section>
 
-  
 <!-- Section 4: Testimoni -->
 <section id="testimoni" class="py-20 bg-white">
   <div class="container mx-auto px-4 text-center">
@@ -220,6 +133,20 @@
     <p class="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="100">
       Apa kata mereka yang sudah mencoba <b>Coffee MOMI</b>?
     </p>
+
+    <!-- Video Testimoni di Atas -->
+    <div class="max-w-3xl mx-auto text-center mb-16" data-aos="zoom-in" data-aos-delay="400">
+      <h3 class="text-3xl font-bold text-gray-800 mb-6">🎥 Testimoni Video</h3>
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl mx-auto w-full md:w-3/4 lg:w-2/3">
+        <iframe class="w-full aspect-video rounded-3xl"
+          src="https://www.youtube.com/embed/w3RxdxfuyOA"
+          title="Testimoni Coffee MOMI"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
 
     <!-- Testimoni Teks -->
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
@@ -248,40 +175,41 @@
       </div>
     </div>
 
-   <!-- Testimoni Video -->
-<div class="max-w-3xl mx-auto text-center" data-aos="zoom-in" data-aos-delay="400">
-  <h3 class="text-3xl font-bold text-gray-800 mb-6">🎥 Testimoni Video</h3>
-  <p class="text-gray-600 mb-8 text-lg">
-    Lihat pengalaman langsung pengguna kami yang sudah merasakan manfaat <b>Coffee MOMI</b>!
-  </p>
-
-  <div class="relative rounded-3xl overflow-hidden shadow-2xl mx-auto w-full md:w-3/4 lg:w-2/3">
-    <video 
-      class="w-full rounded-3xl"
-      autoplay
-      muted
-      loop
-      playsinline
-      controls
-      poster="img/manfaat.jpeg"
-    >
-      <source src="img/WA 0895 4016 88789, Momi Coffee Ramuan Kopi Untuk Menambah Stamina Pria Dewasa Terbaik.mp4" type="video/mp4">
-      Browser Anda tidak mendukung pemutaran video.
-    </video>
-  </div>
-</div>
+    <!-- Bagian Promo Harga (dipindah ke bawah) -->
+    <div class="max-w-3xl mx-auto mt-16" data-aos="fade-up" data-aos-delay="400">
+      <div class="inline-block bg-red-500 text-white px-6 py-2 rounded-full font-bold text-sm mb-4 promo-pulse">
+        🔥 PROMO TERBATAS! Berlaku Selama 1 Jam!
+      </div>
+      <h2 class="text-5xl font-bold text-gray-800 mb-6">
+        Diskon Hingga <span class="text-red-600">65%</span>
+      </h2>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-10 mb-6 float-delayed">
+        <div class="space-y-6 text-gray-700">
+          <div class="border-b border-gray-200 pb-4">
+            <p class="font-semibold text-lg">☕ 1 Box</p>
+            <p class="text-gray-400 line-through">Rp 500.000</p>
+            <p class="text-3xl font-bold text-red-600">Rp 250.000 <span class="text-sm text-gray-500">(Diskon 50%)</span></p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <p class="font-semibold text-lg">☕ 2 Box</p>
+            <p class="text-gray-400 line-through">Rp 1.000.000</p>
+            <p class="text-3xl font-bold text-red-600">Rp 400.000 <span class="text-sm text-gray-500">(Diskon 60%)</span></p>
+          </div>
+          <div>
+            <p class="font-semibold text-lg">☕ 3 Box</p>
+            <p class="text-gray-400 line-through">Rp 1.500.000</p>
+            <p class="text-3xl font-bold text-red-600">Rp 525.000 <span class="text-sm text-gray-500">(Diskon 65%)</span></p>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/082164372980?text=Halo%20saya%20ingin%20pesan%20Coffee%20MOMI%20promo%20diskon%201%20jam!"
+        target="_blank"
+        class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition shadow-lg">
+        Pesan Sekarang & Nikmati Diskonnya!
+      </a>
+    </div>
   </div>
 </section>
-
-      <div class="mt-12" data-aos="fade-up" data-aos-delay="400">
-        <a href="https://wa.me/082164372980?text=Halo,%20saya%20tertarik%20dengan%20Coffee%20MOMI%20setelah%20melihat%20testimoni!"
-          target="_blank"
-          class="bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition shadow-2xl">
-          ☕ Pesan Sekarang & Rasakan Sendiri!
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer id="kontak" class="gradient-bg text-white py-12" data-aos="fade-up">
@@ -301,46 +229,21 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-    });
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+  </script>
 
+  <script>
     // Countdown Timer
     let totalSeconds = 3600;
     function updateCountdown() {
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = totalSeconds % 60;
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      document.getElementById('minutes')?.textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds')?.textContent = seconds.toString().padStart(2, '0');
       if (totalSeconds > 0) totalSeconds--; else totalSeconds = 3600;
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
-	
   </script>
-  <script>
-  // Countdown 1 jam (3600 detik)
-  let totalSeconds = 3600;
-
-  function updateCountdown() {
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-    if (totalSeconds > 0) {
-      totalSeconds--;
-    } else {
-      totalSeconds = 3600; // Reset lagi ke 1 jam
-    }
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
-
 </body>
 </html>
